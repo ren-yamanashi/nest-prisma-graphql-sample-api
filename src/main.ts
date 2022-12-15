@@ -8,6 +8,8 @@ async function bootstrap() {
   // enable shutdown hook
   const prismaService: PrismaService = app.get(PrismaService);
   prismaService.enableShutdownHooks(app);
-  await app.listen(3060);
+  await app.listen(3303).then(() => {
+    console.log('🚀  Server ready at localhost:' + 3303);
+  });
 }
 bootstrap();
